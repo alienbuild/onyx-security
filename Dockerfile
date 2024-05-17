@@ -2,34 +2,19 @@
 FROM node:latest
 
 # Set the working directory in the container
-WORKDIR /app
+WORKDIR /usr/src/app
 
-# Define an argument for the npm token
-ARG NPM_TOKEN
-
-# Copy the .npmrc file to the container
-COPY .npmrc .npmrc
-
-# Copy package.json and other dependency management files
-COPY package*.json yarn.lock ./
-
-# Install dependencies
-RUN yarn install
-
-# Copy the rest of your application code
-COPY prisma ./prisma
+# Copy the current directory contents into the container at /usr/src/app
 COPY . .
 
-# Generate Prisma client
-RUN npx prisma generate
+# Install any needed packages specified in package.json
+RUN npm install
 
-# Build your application
-RUN yarn build
-
-## Remove the .npmrc file for security
-#RUN rm -f .npmrc
+# Build the Next.js application
+RUN npm run build
 
 # Expose the port your app runs on
 EXPOSE 3003
+
 # Command to run your app (adjust the port as needed)
-CMD ["yarn", "start", "-p", "3003"]
+CMD ["npm", "start", "-p", "3003"]
