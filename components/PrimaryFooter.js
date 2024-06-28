@@ -73,7 +73,7 @@ const PrimaryFooter = () => {
                             </div>
                         </div>
                         <div className={`flex gap-5 items-center`}>
-                            <Link href={`/`}
+                            <Link href={`/privacy-policy`}
                                   className={`block text-sm text-red-500 hover:text-white transition-colors duration-300`}>Privacy
                                 policy</Link>
                             <Button
