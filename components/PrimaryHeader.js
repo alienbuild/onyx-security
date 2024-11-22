@@ -29,7 +29,7 @@ const PrimaryHeader = () => {
                     <div className="flex gap-5 items-center text-sm py-1">
                         <Link href={`https://goo.gl/maps/ONWUW`} target={"_blank"} className={`flex items-center gap-1`}><MapPinIcon className={`w-4 inline`} /> Rushden, Northants</Link>
                         <Link href={"mailto:info@onyxsecurity.com"} className={`flex items-center gap-1`}><EnvelopeIcon className={`w-4 inline`} /> info@onyxsecurity.com</Link>
-                        <Link href={"tel:01933393992"} className={`flex items-center gap-1`}><PhoneIcon className={`w-4 inline`} /> 01933 392 992</Link>
+                        <Link href={"tel:01933392992"} className={`flex items-center gap-1`}><PhoneIcon className={`w-4 inline`} /> 01933 392 992</Link>
                     </div>
                 </Container>
             </header>
